@@ -12,7 +12,7 @@ def new_titanic_data():
 
 def get_titanic_data():
     if os.path.isfile('titanic_df.csv'):
-        df = pd.read.csv('titanic_df.csv', index_col = 0)
+        df = pd.read_csv('titanic_df.csv', index_col = 0)
 
     else:
 
@@ -22,12 +22,12 @@ def get_titanic_data():
         return df
 
 def new_iris_db():
-    df =  pd.read_sql('SELECT species_id, species_name, speal_length, sepal_width, petal length, petal_width FROM measurements JOIN species USING(species_id)', get_db_url('iris_db'))
+    df =  pd.read_sql('SELECT species_id, species_name, sepal_length, sepal_width, petal_length, petal_width FROM measurements JOIN species USING(species_id)', get_db_url('iris_db'))
     return df
 
 def get_iris_db():
     if os.path.isfile('iris_df.csv'):
-        df = pd.read.csv('iris_df.csv', index_col = 0)
+        df = pd.read_csv('iris_df.csv', index_col = 0)
 
     else:
 
@@ -54,7 +54,7 @@ def new_telco_data():
 
 def get_telco_data():
     if os.path.isfile('telco_df.csv'):
-        df = pd.read.csv('telco_df.csv', index_col = 0)
+        df = pd.read_csv('telco_df.csv', index_col = 0)
 
     else:
 
