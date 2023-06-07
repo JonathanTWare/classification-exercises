@@ -46,11 +46,11 @@ def split_telco_data(df):
 
 def split_iris_data(df):
     
-    train_validate, test = train_test_split(df, test_size=.2, random_state=123, stratify=df.species_setosa)
+    train_validate, test = train_test_split(df, test_size=.2, random_state=123, stratify=df.species)
     train, validate = train_test_split(train_validate, 
                                        test_size=.3, 
                                        random_state=123, 
-                                       stratify=train_validate.species_setosa)
+                                       stratify=train_validate.species)
     
     print(f'Train:{train.shape}')
     print(f'Test:{test.shape}')
