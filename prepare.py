@@ -13,6 +13,7 @@ def split_titanic_data(df):
                                        random_state=123, 
                                        stratify=train_validate.survived)
     
+    
     print(f'Train:{train.shape}')
     print(f'Test:{test.shape}')
     print(f'Val: {validate.shape}')
@@ -24,13 +25,15 @@ def split_titanic_data(df):
     print("Validation Titanic Data:")
     print(validate)
 
+    return train, validate, test
+
 def split_telco_data(df):
     
-    train_validate, test = train_test_split(df, test_size=.2, random_state=123, stratify=df.active)
+    train_validate, test = train_test_split(df, test_size=.2, random_state=123, stratify=df.churn)
     train, validate = train_test_split(train_validate, 
                                        test_size=.3, 
                                        random_state=123, 
-                                       stratify=train_validate.active)
+                                       stratify=train_validate.churn)
     
     print(f'Train:{train.shape}')
     print(f'Test:{test.shape}')
@@ -43,6 +46,8 @@ def split_telco_data(df):
     print(test)
     print("Validation Telco Data:")
     print(validate)
+
+    return train, validate, test
 
 def split_iris_data(df):
     
@@ -63,3 +68,5 @@ def split_iris_data(df):
     print(test)
     print("Validation Iris Data:")
     print(validate)
+
+    return train, validate, test
